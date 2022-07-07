@@ -19,7 +19,6 @@ public class OrderService {
     private final ProductService productService;
 
     public OrderModel createOrder(CreateOrderRequest order) {
-
         OrderModel newOrder = new OrderModel();
         newOrder.setCustomerModel(customerService.getCustomerById(order.getCustomerId()));
         newOrder.setProductModel(productService.getProductById(order.getProductId()));

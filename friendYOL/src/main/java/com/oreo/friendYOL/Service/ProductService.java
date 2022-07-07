@@ -36,10 +36,6 @@ public class ProductService {
         return productRepository.findById(id).orElseThrow(() -> new RuntimeException("Product not found!"));
     }
 
-    public void deleteProduct(Integer id) {
-        productRepository.deleteById(id);
-    }
-
     public void updateProduct(Integer id, ProductModel newProduct) {
       /*  ProductModel oldProduct=getProductById(id);
         oldProduct.setName(newProduct.getName());
@@ -48,7 +44,6 @@ public class ProductService {
         oldProduct.setPrice(newProduct.getPrice());
         oldProduct.setPictureUrl(newProduct.getPictureUrl());
         productRepository.(oldProduct);*/
-
         newProduct.setId(id);
         productRepository.save(newProduct);
     }

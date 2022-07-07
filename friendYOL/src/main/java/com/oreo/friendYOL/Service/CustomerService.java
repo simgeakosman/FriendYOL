@@ -24,4 +24,9 @@ public class CustomerService {
         return customerRepository.findById(customerId).orElseThrow(() -> new RuntimeException("Customer Not Found"));
     }
 
+    public CustomerModel updateCustomer(CustomerModel newCustomer,Integer id) {
+        newCustomer.setId(id);
+        return customerRepository.save(newCustomer);
+    }
+
 }
